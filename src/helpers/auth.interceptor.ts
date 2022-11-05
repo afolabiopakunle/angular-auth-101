@@ -3,8 +3,6 @@ import {HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest}
 import {TokenStorageService} from "../app/services/token-storage.service";
 import {Observable} from "rxjs";
 
-const TOKEN_HEADER_KEY = 'Authorization';
-
 @Injectable()
 
 export class AuthInterceptor implements HttpInterceptor {
