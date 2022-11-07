@@ -40,8 +40,8 @@
              role="alert"
              *ngIf="password.errors && loginForm.submitted"
         >
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">Password cannot be less than 6 characters</div>
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">Password cannot be less than 6 characters</div>
         </div>
       </div>
 

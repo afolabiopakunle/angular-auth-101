@@ -1,8 +1,9 @@
 <div class="col-md-12">
   <div class="card card-container">
-    <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="icon" id="profile-img"
+    <div style="text-align: center">
+    <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="icon" width="400" id="profile-img"
          class="profile-img-card">
-
+    </div>
     <form *ngIf="!isSuccessful" name="form"
           (ngSubmit)="registerForm.form.valid && onSubmit()"
           #registerForm='ngForm' novalidate
@@ -19,9 +20,9 @@
                #username="ngModel">
       </div>
       <div class="alert-danger" *ngIf="username.errors && registerForm.submitted">
-        <div *ngIf="username.errors.required">Username is required</div>
-        <div *ngIf="username.errors.minlength">Username must be at least 3 characters</div>
-        <div *ngIf="username.errors.maxlength">Username cannot be more than 20 characters</div>
+        <div *ngIf="username.errors['required']">Username is required</div>
+        <div *ngIf="username.errors['minlength']">Username must be at least 3 characters</div>
+        <div *ngIf="username.errors['maxlength']">Username cannot be more than 20 characters</div>
       </div>
 
       <div class="form-group">
@@ -36,8 +37,8 @@
           required
         >
         <div class="alert-danger" *ngIf="email.errors && registerForm.submitted">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">Email is invalid</div>
+          <div *ngIf="email.errors['required']">Email is required</div>
+          <div *ngIf="email.errors['email']">Email is invalid</div>
         </div>
       </div>
 
@@ -53,9 +54,9 @@
           [(ngModel)]="form.password"
           #password="ngModel">
         <div class="alert-danger" *ngIf="password.errors && registerForm.submitted">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
-          <div *ngIf="password.errors.minlength">Password cannot be more than 20 characters</div>
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+          <div *ngIf="password.errors['minlength']">Password cannot be more than 20 characters</div>
         </div>
       </div>
 
